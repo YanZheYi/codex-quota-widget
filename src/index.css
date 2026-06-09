@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-page: #18181b; 
+    --bg-card: #1c1c1c; 
+    --bg-card-inner: #242424;
+    --border-base: #27272a; 
+    --text-base: #f4f4f5; 
+    --text-muted: #a1a1aa; 
+    --text-subtle: #71717a; 
+    --ring-glow: rgba(34, 197, 94, 0.4); 
+    --ring-color: #22c55e;
+  }
+  
+  :root[data-theme="dark"] {
+    --bg-page: #000000;
+    --bg-card: #0a0a0a;
+    --bg-card-inner: #111111;
+    --border-base: #262626;
+    --text-base: #f5f5f5;
+    --text-muted: #a3a3a3;
+    --text-subtle: #737373;
+    --ring-glow: rgba(34, 197, 94, 0.4);
+    --ring-color: #22c55e;
+  }
+  
+  :root[data-theme="zinc"] {
+    --bg-page: #18181b;
+    --bg-card: #1c1c1c; 
+    --bg-card-inner: #242424;
+    --border-base: #27272a; 
+    --text-base: #f4f4f5; 
+    --text-muted: #a1a1aa; 
+    --text-subtle: #71717a; 
+    --ring-glow: rgba(34, 197, 94, 0.4);
+    --ring-color: #22c55e;
+  }
+  
+  :root[data-theme="slate"] {
+    --bg-page: #0f172a;
+    --bg-card: #141e33;
+    --bg-card-inner: #1e293b;
+    --border-base: #334155;
+    --text-base: #f8fafc;
+    --text-muted: #94a3b8;
+    --text-subtle: #64748b;
+    --ring-glow: rgba(34, 197, 94, 0.4);
+    --ring-color: #22c55e;
+  }
+
+  :root[data-theme="neutral"] {
+    --bg-page: #171717;
+    --bg-card: #1e1e1e; 
+    --bg-card-inner: #262626;
+    --border-base: #404040;
+    --text-base: #f5f5f5;
+    --text-muted: #a3a3a3;
+    --text-subtle: #737373;
+    --ring-glow: rgba(34, 197, 94, 0.4);
+    --ring-color: #22c55e;
+  }
+
+  :root[data-theme="light"] {
+    --bg-page: #f1f5f9;
+    --bg-card: #ffffff;
+    --bg-card-inner: #f8fafc;
+    --border-base: #e2e8f0;
+    --text-base: #0f172a;
+    --text-muted: #64748b;
+    --text-subtle: #94a3b8;
+    --ring-glow: rgba(34, 197, 94, 0.4);
+    --ring-color: #22c55e;
+  }
+
+  :root[data-theme="stone"] {
+    --bg-page: #1c1917;
+    --bg-card: #23201e;
+    --bg-card-inner: #292524;
+    --border-base: #44403c;
+    --text-base: #f5f5f4;
+    --text-muted: #a8a29e;
+    --text-subtle: #78716c;
+    --ring-glow: rgba(34, 197, 94, 0.4);
+    --ring-color: #22c55e;
+  }
+}
+
+html,
+body,
+#root {
+  background: transparent !important;
+  background-color: transparent !important;
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Codex Quota Widget",
+  "description": "A Windows-style desktop widget for monitoring local Codex API quota and status.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
