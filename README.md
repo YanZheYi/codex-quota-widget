@@ -15,6 +15,9 @@
   <a href="#-配置文件与账号热切换"><b>配置文件与多账号切换</b></a>
 </p>
 
+<img width="360" height="356" alt="ScreenShot_2026-06-09_183437_183" src="https://github.com/user-attachments/assets/658aef22-1dec-4d48-98f7-e920418dea02" />
+<img width="360" height="356" alt="ScreenShot_2026-06-09_183454_872" src="https://github.com/user-attachments/assets/fad0ba13-3e7d-4d18-98c4-292a1abb3f6e" />
+
 ---
 
 ## 🌟 核心特色
