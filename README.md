@@ -48,18 +48,25 @@
 
 ## 🚀 本地开发与编译
 
-项目内置了针对 Windows 环境优化的一键批处理脚本，免去手动配置复杂的 Rust 与 MSVC 编译环境变量：
+项目内置了基于 Node.js 开发的**全平台自动化构建脚本**（支持 Windows / macOS / Linux），免去不同系统下手动配置环境变量、清理冲突端口的烦恼：
 
 ### 1. 启动本地开发 (Dev Mode)
-双击运行根目录下的 **`run-dev.cmd`** 即可：
-- 脚本会自动检测并清理本地冲突的 `3000` 端口。
-- 自动提取并向进程中注入您的 Windows 代理，解决国内网络连接超时的问题。
-- 一键拉起 React 调试挂载 Tauri 界面。
+在项目根目录下打开终端，执行以下命令：
+```bash
+npm run run-dev
+```
+- 脚本会自动判断当前操作系统，并检测清理占用 `3000` 端口的冲突程序。
+- **Windows 下**：自动读取并注入系统代理配置（解决国内环境下载依赖超时问题），并自动补全 MSVC 与 Rust 编译环境变量。
+- 一键启动 Vite 前端开发服务器，并挂载 Tauri 本地调试窗口。
 
-### 2. 打包生成独立的 `.exe` 程序 (Production Build)
-双击运行根目录下的 **`run-build.cmd`**：
-- 编译引擎将执行 Release 级代码优化与打包。
-- 打包完成后，可在 `src-tauri\target\release\` 目录下获取纯绿色的可执行程序 **`codex-monitor.exe`**。
+### 2. 打包编译发行版 (Production Build)
+在项目根目录下打开终端，执行以下命令：
+```bash
+npm run run-build
+```
+- 脚本会自动初始化对应平台的安全编译环境。
+- 执行完整的 Release 级代码构建与前/后端资源优化打包。
+- 打包完成后，会自动在 `src-tauri/target/release/` 及 `bundle/` 目录下生成各平台原生的安装程序（如 `.exe`, `.dmg`, `.deb` 等）及便携版独立可执行文件。
 
 ### 3. 如何自定义与替换应用 Logo (Icon)
 > [!IMPORTANT]
