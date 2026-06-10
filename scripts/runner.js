@@ -125,7 +125,7 @@ async function run() {
     }
 
     console.log(`\x1b[32m启动 Tauri 环境 (${command})...\x1b[0m`);
-    const child = spawn(npmCmd, ['run', 'tauri', command], { stdio: 'inherit', env });
+    const child = spawn(npmCmd, ['run', 'tauri', command], { stdio: 'inherit', env, shell: isWin });
 
     child.on('exit', (code) => {
         if (code === 0 && command === 'build') {
