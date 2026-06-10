@@ -7,7 +7,7 @@
     "distDir": "../dist"
   },
   "package": {
-    "productName": "codex-monitor",
+    "productName": "codex-quota-widget",
     "version": "1.0.1"
   },
   "tauri": {
@@ -45,7 +45,7 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "com.codex.monitor",
+      "identifier": "com.codex.quota-widget",
       "longDescription": "",
       "macOS": {
         "entitlements": null,
@@ -74,7 +74,7 @@
         "fullscreen": false,
         "height": 300,
         "resizable": false,
-        "title": "Codex Monitor",
+        "title": "Codex Quota Widget",
         "width": 380,
         "transparent": true,
         "decorations": false,

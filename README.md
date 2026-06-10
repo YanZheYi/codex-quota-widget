@@ -1,7 +1,7 @@
-# 🚀 Codex Monitor (ChatGPT 额度监控桌面小组件)
+# 🚀 Codex Quota Widget (ChatGPT 额度监控桌面小组件)
 
 <p align="center">
-  <img src="src-tauri/icons/128x128.png" alt="Codex Monitor Logo" width="80" height="80" style="border-radius: 20%; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" />
+  <img src="src-tauri/icons/128x128.png" alt="Codex Quota Widget Logo" width="80" height="80" style="border-radius: 20%; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" />
 </p>
 
 <p align="center">

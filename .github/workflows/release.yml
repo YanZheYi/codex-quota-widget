@@ -61,7 +61,7 @@ jobs:
         with:
           tagName: ${{ github.ref_name }}
           releaseName: 'Release ${{ github.ref_name }}'
-          releaseBody: '自动编译生成的跨平台安装包 (Automatic release of Codex Monitor)'
+          releaseBody: '自动编译生成的跨平台安装包 (Automatic release of Codex Quota Widget)'
           releaseDraft: true # Creates a draft release so you can review it before publishing
           prerelease: false
           args: ${{ matrix.platform == 'macos-latest' && '--target universal-apple-darwin' || '' }}
@@ -70,12 +70,12 @@ jobs:
         if: runner.os == 'Windows'
         run: |
           cd src-tauri/target/release
-          Compress-Archive -Path "codex-monitor.exe" -DestinationPath "codex-monitor-portable-windows-x64.zip"
+          Compress-Archive -Path "codex-quota-widget.exe" -DestinationPath "codex-quota-widget-portable-windows-x64.zip"
 
       - name: Upload Windows Portable
         if: runner.os == 'Windows'
         uses: softprops/action-gh-release@v1
         with:
           tag_name: ${{ github.ref_name }}
-          files: src-tauri/target/release/codex-monitor-portable-windows-x64.zip
+          files: src-tauri/target/release/codex-quota-widget-portable-windows-x64.zip
           draft: true
