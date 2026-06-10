@@ -6,3 +6,5 @@ fn main() {
     .run(tauri::generate_context!())
     .expect("error while running tauri application");
 }
+
+// Dummy comment to bust Cargo cache and force icon rebuild
