@@ -65,3 +65,18 @@ jobs:
           releaseDraft: true # Creates a draft release so you can review it before publishing
           prerelease: false
           args: ${{ matrix.platform == 'macos-latest' && '--target universal-apple-darwin' || '' }}
+
+      - name: Create Windows Portable Zip
+        if: runner.os == 'Windows'
+        run: |
+          cd src-tauri/target/release
+          Rename-Item -Path "app.exe" -NewName "codex-monitor-portable.exe"
+          Compress-Archive -Path "codex-monitor-portable.exe" -DestinationPath "codex-monitor-portable-windows-x64.zip"
+
+      - name: Upload Windows Portable
+        if: runner.os == 'Windows'
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ github.ref_name }}
+          files: src-tauri/target/release/codex-monitor-portable-windows-x64.zip
+          draft: true
