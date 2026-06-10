@@ -32,6 +32,13 @@ jobs:
 
       - name: Install Rust stable
         uses: dtolnay/rust-toolchain@stable
+        if: runner.os != 'macOS'
+
+      - name: Install Rust stable for macOS
+        uses: dtolnay/rust-toolchain@stable
+        if: runner.os == 'macOS'
+        with:
+          targets: aarch64-apple-darwin, x86_64-apple-darwin
 
       - name: Rust cache
         uses: swatinem/rust-cache@v2
@@ -57,3 +64,4 @@ jobs:
           releaseBody: '自动编译生成的跨平台安装包 (Automatic release of Codex Monitor)'
           releaseDraft: true # Creates a draft release so you can review it before publishing
           prerelease: false
+          args: ${{ matrix.platform == 'macos-latest' && '--target universal-apple-darwin' || '' }}
