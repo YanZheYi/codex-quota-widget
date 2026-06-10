@@ -84,6 +84,7 @@ async function run() {
     await checkAndKillPort();
 
     const env = { ...process.env };
+    const pathKey = Object.keys(env).find(k => k.toUpperCase() === 'PATH') || 'PATH';
 
     if (isWin) {
         console.log(`\x1b[36m正在初始化 Windows 编译环境和环境变量...\x1b[0m`);
@@ -102,16 +103,16 @@ async function run() {
         try {
             const sdkDir = execSync('powershell -NoProfile -Command "(Get-ChildItem \'C:\\Program Files (x86)\\Windows Kits\\10\\bin\' -Directory | Sort-Object Name -Descending | Select-Object -First 1).FullName"', { encoding: 'utf-8' }).trim();
             if (sdkDir) {
-                env.PATH = `${userProfile}\\.cargo\\bin;${msvcPath};${sdkDir}\\x64;${env.PATH}`;
+                env[pathKey] = `${userProfile}\\.cargo\\bin;${msvcPath};${sdkDir}\\x64;${env[pathKey]}`;
             } else {
-                env.PATH = `${userProfile}\\.cargo\\bin;${msvcPath};${env.PATH}`;
+                env[pathKey] = `${userProfile}\\.cargo\\bin;${msvcPath};${env[pathKey]}`;
             }
         } catch (e) {
-            env.PATH = `${userProfile}\\.cargo\\bin;${msvcPath};${env.PATH}`;
+            env[pathKey] = `${userProfile}\\.cargo\\bin;${msvcPath};${env[pathKey]}`;
         }
     } else {
         const home = process.env.HOME || '';
-        env.PATH = `${home}/.cargo/bin:${env.PATH}`;
+        env[pathKey] = `${home}/.cargo/bin:${env[pathKey]}`;
     }
 
     console.log(`\x1b[36m正在检查并安装依赖...\x1b[0m`);
